@@ -1,0 +1,70 @@
+*{
+    margin: 0 auto; font-family: 'Arial', monospace;
+}
+html{
+    display: flex; 
+    align-items: center;
+    color: #f0f0f0; 
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(#2f2f2f,#0f0f0f); 
+    flex-direction:row;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+p{
+	text-align: center; 
+	color: black; 
+	font-size: 30px;
+	margin: 5px;
+}
+#shamrock{
+	position: absolute;
+	top: 10px;
+	left: 20px;
+}
+#shamrockitv{
+	position: absolute;
+	top: 50px; 
+	right: 20px;
+	font-size: 40px;
+	color: yellow; 
+	font-style: italic;
+}
+#container{
+	padding: 10px;
+	background-color: #999999; 
+	border-radius: 10px;
+	height: 950px;
+	width: 1700px;
+	display: flex;
+	flex-direction: column;
+    margin: 0 auto;
+}
+#heading{
+	text-align:center;
+	padding-top: 20px;
+	font-size: 30px;
+	color: yellow;
+	font-weight:bold;
+	background: linear-gradient(#2f2f2f,#0f0f0f); 
+	border-radius: 10px;
+	height: 50px;
+	width: 100%;
+}
+#info{
+	display: flex;
+	color: black; 
+	font-size: 25px;
+	font-weight: bolder;
+}
+#list{
+	background-color: white;
+	height: 95%;
+	width: 100%;
+	border-radius: 10px;
+	padding-top: 10px;
+}
