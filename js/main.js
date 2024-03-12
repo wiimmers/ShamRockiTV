@@ -43,7 +43,7 @@ const intervalID = setInterval(insertList, 5000);
 
 insertList();
 async function insertList() {
-	const response = await fetch('https://thankful-globally-kangaroo.ngrok-free.app/tickets', {
+	const response = await fetch('http://10.2.1.57/tickets', {
 		method: 'GET',
 		mode: 'cors',
 		headers: {
