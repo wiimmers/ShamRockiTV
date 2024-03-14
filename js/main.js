@@ -62,14 +62,36 @@ async function insertList() {
 		newParagraph.style.alignItems = 'center'; 
 		newParagraph.style.borderBottom = 'solid gray';
 
+		if (jsonData[i].status === 'NEW') {
+			newParagraph.style.color = 'red'
+		} else if (jsonData[i].status === 'OPEN') {
+			newParagraph.style.color = 'orange'
+		} else if (jsonData[i].status === 'WAITING') {
+			newParagraph.style.color = 'blue'
+		} else if (jsonData[i].status === 'PAUSED') {
+			newParagraph.style.color = 'gray'
+		}
+
+		var statusDiv = document.createElement('div')
+		statusDiv.style.position = 'relative'
 		var ticketImg = document.createElement('img'); 
 		ticketImg.src = 'images/ticket.png';
-		ticketImg.style.width = '50px';
-		newParagraph.appendChild(ticketImg);
+		ticketImg.style.width = '100px';
+
+		statusDiv.appendChild(ticketImg)
+
+		newParagraph.appendChild(statusDiv);
 
 		for(var key in jsonData[i]) {
 			var text = document.createElement('span');
+
 			switch (key) {
+				case 'status': 
+					text.style.fontSize = '15px'
+					text.style.position = 'absolute'
+					text.style.textAlign = 'center'
+					text.style.top = '50%'
+					text.style.left = '0'
 				case 'ticketNo':
 					text.style.width = '100px';
 					break;
@@ -94,10 +116,16 @@ async function insertList() {
 			}
 			if (key === 'subject') {
 				text.textContent = jsonData[i][key].replace('New Ticket Created: ', '');
-			} else {
-				text.textContent = jsonData[i][key];
+				newParagraph.appendChild(text);
+			} else if (key === 'status') {
+				text.textContent = jsonData[i][key]
+				statusDiv.appendChild(text)
 			}
-			newParagraph.appendChild(text);
+			else {
+				text.textContent = jsonData[i][key];
+				newParagraph.appendChild(text);
+			}
+			
 		}
 
 		listDiv.appendChild(newParagraph)

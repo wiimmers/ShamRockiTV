@@ -5,9 +5,7 @@ html{
     display: flex; 
     align-items: center;
     color: #f0f0f0; 
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(#2f2f2f,#0f0f0f); 
+    background: #0f0f0f; 
     flex-direction:row;
 }
 body{
