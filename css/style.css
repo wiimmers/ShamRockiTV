@@ -36,7 +36,8 @@ p{
 	padding: 10px;
 	background-color: #999999; 
 	border-radius: 10px;
-	height: 950px;
+	min-height: 950px;
+	height: auto;
 	width: 1700px;
 	display: flex;
 	flex-direction: column;
@@ -61,7 +62,8 @@ p{
 }
 #list{
 	background-color: white;
-	height: 95%;
+	min-height: 900px;
+	height: auto;
 	width: 100%;
 	border-radius: 10px;
 	padding-top: 10px;

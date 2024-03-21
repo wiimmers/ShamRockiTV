@@ -17,10 +17,18 @@ var init = function () {
     	case 37: //LEFT arrow
     		break;
     	case 38: //UP arrow
+    		window.scrollBy({
+  			  top: -100,
+  			  behavior: "smooth",
+  			});
     		break;
     	case 39: //RIGHT arrow
     		break;
     	case 40: //DOWN arrow
+    		window.scrollBy({
+    			  top: 100,
+    			  behavior: "smooth",
+    			});
     		break;
     	case 13: //OK button
     		break;
@@ -70,6 +78,8 @@ async function insertList() {
 			newParagraph.style.color = 'blue'
 		} else if (jsonData[i].status === 'PAUSED') {
 			newParagraph.style.color = 'gray'
+		} else if (jsonData[i].status === 'RESOLVED') {
+			newParagraph.style.color = 'green'
 		}
 
 		var statusDiv = document.createElement('div')
