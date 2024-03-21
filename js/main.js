@@ -97,11 +97,13 @@ async function insertList() {
 
 			switch (key) {
 				case 'status': 
-					text.style.fontSize = '15px'
+					text.style.fontSize = '18px'
 					text.style.position = 'absolute'
 					text.style.textAlign = 'center'
-					text.style.top = '50%'
-					text.style.left = '0'
+					text.style.top = '55px'
+					text.style.left = '-2px'
+					text.style.fontStyle = 'italic'
+					text.style.fontWeight = 'bolder'
 				case 'ticketNo':
 					text.style.width = '100px';
 					break;
@@ -130,6 +132,9 @@ async function insertList() {
 			} else if (key === 'status') {
 				text.textContent = jsonData[i][key]
 				statusDiv.appendChild(text)
+				if (text.textContent === 'RESOLVED' || text.textContent === 'WAITING' || text.textContent === 'PAUSED') {
+					text.style.fontSize = '13px'
+				}
 			}
 			else {
 				text.textContent = jsonData[i][key];
